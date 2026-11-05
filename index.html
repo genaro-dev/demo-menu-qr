@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Café del Sur · Menú (demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fondo: #f1f5f0;
+    --tinta: #1f2a24;
+    --verde: #2f5d50;
+    --linea: #b9c8bf;
+    --suave: #5d6b63;
+    --blanco: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--tinta);
+    font-family: "Instrument Sans", system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  main { max-width: 34rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+  /* ===== Encabezado con logo ===== */
+  header { display: flex; align-items: center; gap: 1rem; margin-bottom: .5rem; }
+  header img { width: 72px; height: 72px; flex: none; }
+  h1 {
+    font-family: "Young Serif", Georgia, serif;
+    font-weight: 400;
+    font-size: 2.3rem;
+    line-height: 1.05;
+    margin: 0;
+    color: var(--verde);
+  }
+  .bajada { margin: 0 0 1.5rem; color: var(--suave); }
+
+  /* ===== Índice de categorías ===== */
+  nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+  nav a {
+    padding: .35rem .85rem;
+    border: 2px solid var(--verde);
+    border-radius: 999px;
+    color: var(--verde);
+    font-weight: 600;
+    font-size: .92rem;
+    text-decoration: none;
+  }
+  nav a:hover { background: var(--verde); color: var(--blanco); }
+
+  /* ===== Categorías ===== */
+  section { scroll-margin-top: 1rem; }
+  h2 {
+    font-family: "Young Serif", Georgia, serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin: 2.5rem 0 .75rem;
+    padding-bottom: .4rem;
+    border-bottom: 2px solid var(--verde);
+  }
+  .portada {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: .5rem;
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { padding: .6rem 0; }
+  .fila { display: flex; align-items: baseline; gap: .5rem; }
+  .nombre { font-weight: 600; }
+  .puntos { flex: 1; border-bottom: 2px dotted var(--linea); transform: translateY(-.25rem); }
+  .precio { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .detalle { margin: .1rem 0 0; font-size: .92rem; color: var(--suave); max-width: 26rem; }
+
+  /* ===== Pie ===== */
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid var(--verde); }
+  footer p { margin: 0 0 .5rem; }
+  .contacto { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0; }
+  .contacto a {
+    padding: .6rem 1.1rem;
+    border-radius: 8px;
+    background: var(--verde);
+    color: var(--blanco);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .contacto a:hover { opacity: .9; }
+  .aviso { font-size: .85rem; color: var(--suave); }
+  a:focus-visible { outline: 3px solid var(--verde); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- ====== ENCABEZADO: logo + nombre del local ====== -->
+  <header>
+    <img src="imagenes/logo.svg" alt="Logo de Café del Sur" width="72" height="72">
+    <h1>Café del Sur</h1>
+  </header>
+  <p class="bajada">Lunes a sábado, de 8 a 20 h. Precios actualizados al 05/11/2026.</p>
+
+  <!-- ====== ÍNDICE: cada link lleva al id de una sección ====== -->
+  <nav aria-label="Categorías del menú">
+    <a href="#cafes">Cafés</a>
+    <a href="#comer">Para comer</a>
+    <a href="#sandwiches">Sándwiches</a>
+    <a href="#ensaladas">Ensaladas</a>
+    <a href="#licuados">Licuados</a>
+  </nav>
+
+  <!-- ====== CAFÉS ====== -->
+  <section id="cafes">
+    <h2>Cafés</h2>
+    <img class="portada" src="imagenes/cafe.svg" alt="Taza de café con vapor" width="800" height="450">
+    <ul>
+      <li><div class="fila"><span class="nombre">Espresso</span><span class="puntos"></span><span class="precio">$2.500</span></div></li>
+      <li><div class="fila"><span class="nombre">Cortado</span><span class="puntos"></span><span class="precio">$2.800</span></div></li>
+      <li>
+        <div class="fila"><span class="nombre">Latte</span><span class="puntos"></span><span class="precio">$3.600</span></div>
+        <p class="detalle">Con leche entera o deslactosada.</p>
+      </li>
+      <li><div class="fila"><span class="nombre">Capuchino</span><span class="puntos"></span><span class="precio">$3.800</span></div></li>
+      <li>
+        <div class="fila"><span class="nombre">Submarino</span><span class="puntos"></span><span class="precio">$4.500</span></div>
+        <p class="detalle">Leche caliente con barra de chocolate.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ====== PARA COMER ====== -->
+  <section id="comer">
+    <h2>Para comer</h2>
+    <img class="portada" src="imagenes/torta.svg" alt="Porción de torta de chocolate" width="800" height="450" loading="lazy">
+    <ul>
+      <li><div class="fila"><span class="nombre">Medialuna</span><span class="puntos"></span><span class="precio">$1.200</span></div></li>
+      <li><div class="fila"><span class="nombre">Tostado de jamón y queso</span><span class="puntos"></span><span class="precio">$5.900</span></div></li>
+      <li>
+        <div class="fila"><span class="nombre">Porción de torta del día</span><span class="puntos"></span><span class="precio">$4.800</span></div>
+        <p class="detalle">Preguntá cuál hay hoy.</p>
+      </li>
+      <li><div class="fila"><span class="nombre">Brownie con crema</span><span class="puntos"></span><span class="precio">$5.300</span></div></li>
+    </ul>
+  </section>
+
+  <!-- ====== SÁNDWICHES ====== -->
+  <section id="sandwiches">
+    <h2>Sándwiches</h2>
+    <img class="portada" src="imagenes/sandwich.svg" alt="Sándwich completo" width="800" height="450" loading="lazy">
+    <ul>
+      <li>
+        <div class="fila"><span class="nombre">Milanesa completa</span><span class="puntos"></span><span class="precio">$8.900</span></div>
+        <p class="detalle">Lechuga, tomate, jamón, queso y huevo.</p>
+      </li>
+      <li><div class="fila"><span class="nombre">Pollo y palta</span><span class="puntos"></span><span class="precio">$8.200</span></div></li>
+      <li>
+        <div class="fila"><span class="nombre">Veggie</span><span class="puntos"></span><span class="precio">$7.900</span></div>
+        <p class="detalle">Berenjena grillada, tomate seco y queso.</p>
+      </li>
+      <li><div class="fila"><span class="nombre">Sándwiches de miga (x3)</span><span class="puntos"></span><span class="precio">$4.500</span></div></li>
+    </ul>
+  </section>
+
+  <!-- ====== ENSALADAS ====== -->
+  <section id="ensaladas">
+    <h2>Ensaladas</h2>
+    <img class="portada" src="imagenes/ensalada.svg" alt="Bowl de ensalada con verduras" width="800" height="450" loading="lazy">
+    <ul>
+      <li>
+        <div class="fila"><span class="nombre">Mixta</span><span class="puntos"></span><span class="precio">$5.800</span></div>
+        <p class="detalle">Lechuga, tomate y zanahoria.</p>
+      </li>
+      <li>
+        <div class="fila"><span class="nombre">Caprese</span><span class="puntos"></span><span class="precio">$7.200</span></div>
+        <p class="detalle">Tomate, mozzarella y albahaca.</p>
+      </li>
+      <li>
+        <div class="fila"><span class="nombre">César con pollo</span><span class="puntos"></span><span class="precio">$8.500</span></div>
+        <p class="detalle">Lechuga, pollo grillado, crutones y queso rallado.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ====== LICUADOS ====== -->
+  <section id="licuados">
+    <h2>Licuados</h2>
+    <img class="portada" src="imagenes/licuado.svg" alt="Vaso de licuado de frutilla" width="800" height="450" loading="lazy">
+    <ul>
+      <li>
+        <div class="fila"><span class="nombre">Banana con leche</span><span class="puntos"></span><span class="precio">$4.200</span></div>
+        <p class="detalle">También con agua.</p>
+      </li>
+      <li><div class="fila"><span class="nombre">Frutilla</span><span class="puntos"></span><span class="precio">$4.400</span></div></li>
+      <li><div class="fila"><span class="nombre">Durazno</span><span class="puntos"></span><span class="precio">$4.200</span></div></li>
+      <li><div class="fila"><span class="nombre">Ananá con menta</span><span class="puntos"></span><span class="precio">$4.600</span></div></li>
+    </ul>
+  </section>
+
+  <!-- ====== PIE: contacto ====== -->
+  <footer>
+    <p>Pedí en la barra o escribinos:</p>
+    <div class="contacto">
+      <!-- Reemplazá por el número real: 549 + código de área sin 0 + número sin 15 -->
+      <a href="https://wa.me/5492966000000">WhatsApp</a>
+      <!-- Reemplazá por el Instagram real del local -->
+      <a href="https://www.instagram.com/">Instagram</a>
+    </div>
+    <p class="aviso">Página de demostración: todos los productos, precios, contactos e imágenes son de ejemplo.</p>
+  </footer>
+
+</main>
+</body>
+</html>
